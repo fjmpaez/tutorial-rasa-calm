@@ -1,0 +1,26 @@
+flows:
+  balance_inquiry:
+    description: Este flujo permite a los usuarios consultar el saldo un tipo de producto.
+    steps:
+      - collect: product_type
+        description: El tipo de producto para el que se consulta el saldo que puede ser cuenta o tarjeta.
+      - action: action_balance
+      - action: utter_balance
+
+  last_transactions_inquiry:
+    description: Este flujo permite a los usuarios consultar los últimos movimientos de su cuenta o de su tarjeta.
+    steps:
+      - collect: product_type
+        description: El tipo de producto para el que se consulta los últimos movimientos que puede ser cuenta o tarjeta.
+      - action: action_balance
+      - action: utter_last_transactions
+
+  transfer_money:
+    description: Este flujo permite a los usuarios enviar dinero a otras cuentas.
+    steps:
+      - collect: transfer_account_number
+        description: El número de cuenta al que se enviará el dinero.
+      - collect: transfer_amount
+        description: La cantidad en euros que se enviará a la cuenta.
+      - action: action_transfer
+      - action: utter_transfer_completed

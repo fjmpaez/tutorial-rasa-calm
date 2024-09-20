@@ -1,0 +1,12 @@
+recipe: default.v1
+language: es
+pipeline:
+- name: SingleStepLLMCommandGenerator
+  llm:
+    model_name: gpt-4
+
+policies:
+- name: FlowPolicy
+- name: EnterpriseSearchPolicy
+#  - name: RulePolicy
+assistant_id: 20240918-102026-rigid-style

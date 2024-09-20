@@ -1,0 +1,54 @@
+version: "3.1"
+
+slots:
+  product_type:
+    type: text
+    mappings:
+      - type: from_llm
+
+  transfer_amount:
+    type: float
+    mappings:
+      - type: from_llm
+
+  transfer_account_number:
+    type: text
+    mappings:
+      - type: from_llm
+
+  balance:
+    type: float
+    mappings:
+      - type: custom
+        action: action_balance
+
+  last_transactions:
+    type: text
+    mappings:
+      - type: custom
+        action: action_last_transactions
+
+actions:
+  - action_balance
+  - action_last_transactions
+  - action_transfer
+
+responses:
+  utter_ask_product_type:
+    - text: "¿Desea consultar su cuenta o su tarjeta?"
+
+  utter_ask_transfer_account_number:
+    - text: "¿A qué cuenta quieres enviar el dinero?"
+
+  utter_ask_transfer_amount:
+    - text: "¿Cuánto dinero quieres enviar?"
+
+  utter_transfer_completed:
+    - text: "Se ha realizado una transferencia de {transfer_amount} EUR a la cuenta {transfer_account_number}."
+
+  utter_balance:
+    - text: "El saldo actual de tu {product_type} es de {balance} EUR.?"
+
+  utter_last_transactions:
+    - text: "Los últimos movimientos en tu {product_type} han sido: \n {last_transactions}."
+

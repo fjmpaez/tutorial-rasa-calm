@@ -1,0 +1,7 @@
+flows:
+
+  pattern_search:
+    description: handle a knowledge-based question or request
+    name: pattern search
+    steps:
+      - action: action_trigger_search
