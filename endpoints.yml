@@ -43,3 +43,5 @@ action_endpoint:
 
 nlg:
   type: rephrase
+  rephrase_all: True
+  prompt: prompts/response-rephraser-template.jinja2

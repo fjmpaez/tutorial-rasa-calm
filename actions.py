@@ -38,12 +38,7 @@ class ActionLastTransactions(Action):
             tracker: Tracker,
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
         # Request last transactions
-        last_transactions = '''
-        06/03/2024 |  -60.45 EUR | Gasolina
-        06/03/2024 | -189.34 EUR | Restaurante con amigos
-        02/03/2024 | -250.34 EUR | Compra en Grandes Almacenes
-        01/03/2024 |  +23.00 EUR | Pago de nómina marzo :)
-        '''
+        last_transactions = "\n06/03/2024 |  -60.45 EUR | Gasolina\n06/03/2024 | -189.34 EUR | Restaurante con amigos\n02/03/2024 | -250.34 EUR | Compra en Grandes Almacenes"
 
         return [SlotSet(key="last_transactions", value=last_transactions)]
 

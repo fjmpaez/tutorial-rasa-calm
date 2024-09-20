@@ -45,10 +45,16 @@ responses:
 
   utter_transfer_completed:
     - text: "Se ha realizado una transferencia de {transfer_amount} EUR a la cuenta {transfer_account_number}."
+      metadata:
+        rephrase: False
 
   utter_balance:
     - text: "El saldo actual de tu {product_type} es de {balance} EUR.?"
+      metadata:
+        rephrase: False
 
   utter_last_transactions:
     - text: "Los últimos movimientos en tu {product_type} han sido: \n {last_transactions}."
+      metadata:
+        rephrase: False
 

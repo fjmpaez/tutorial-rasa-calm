@@ -12,7 +12,7 @@ flows:
     steps:
       - collect: product_type
         description: El tipo de producto para el que se consulta los últimos movimientos que puede ser cuenta o tarjeta.
-      - action: action_balance
+      - action: action_last_transactions
       - action: utter_last_transactions
 
   transfer_money:

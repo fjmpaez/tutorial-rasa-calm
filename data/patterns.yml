@@ -1,7 +1,12 @@
 flows:
-
   pattern_search:
     description: handle a knowledge-based question or request
     name: pattern search
     steps:
       - action: action_trigger_search
+
+  pattern_chitchat:
+    description: Conversation repair flow for off-topic interactions that won't disrupt the main conversation. should not respond to greetings or anything else for which there is a flow defined
+    name: pattern chitchat
+    steps:
+      - action: utter_free_chitchat_response
